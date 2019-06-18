@@ -7,9 +7,4 @@ until nums.length < 6
   nums.pop
 end
 matches = nums.select { |n| lottery.include?(n)}
-if !matches.empty?
-  puts "Congrats! You have #{matches.length} matches!"
-puts "Your numbers are : #{nums}, lottery numbers are #{lottery} \nMatching numbers are : #{matches}"
-else
-  puts "Im sorry, your numbers doesn't match to lottery numbers. \nLottery numbers are : #{lottery}"
-end
+puts !matches.empty? ? "Congrats! You have #{matches.length} matches! \nYour numbers are : #{nums}, lottery numbers are #{lottery} \nMatching numbers are : #{matches}" :  "I'm sorry, your numbers doesn't match to lottery numbers. \nLottery numbers are : #{lottery}"
