@@ -1,0 +1,10 @@
+<h1>Todo list</h1>
+<p>
+    <%= link_to "Create a Todo", new_todo_path %>
+</p>
+<% @todos.each do |todos| %>
+<ul>
+    <li><%= link_to todos.name, edit_todo_path(todos) %></li>
+</ul>
+
+<% end %>
