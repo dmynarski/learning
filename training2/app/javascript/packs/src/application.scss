@@ -16,4 +16,16 @@
 
 .center {
   text-align: center;
+  color: #fff;
 }
+
+.jumbotron {
+  background-image: url('/assets/photo.jpg');
+  background-size: cover;
+  border-radius: 0px;
+}
+
+.row {
+  margin: 10px;
+}
+
