@@ -3,7 +3,8 @@
   <h4 class="description"><strong>Steps:</strong></h4>
 
   <%= simple_format(@recipe.description) %>
-
+  <%= link_to 'Edit Recipe', edit_recipe_path(@recipe), class: "btn btn-xs btn-warning" %>
+  <%= link_to 'Delete Recipe', recipe_path(@recipe), method: :delete, data: { confirm: "Delete recipe #{@recipe.name}?"}, class: "btn btn-xs btn-danger" %>
 
 <p>
     <div class="pull-right">
