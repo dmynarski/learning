@@ -1,24 +1,24 @@
 <%= render 'shared/page_title', title: "All recipes" %>
 
 <% @recipes.each do |recipe| %>
-  <div class="row">
+  <div class="row align-items-center">
     <div class="col-md-2">
       <section class="chef_info center">
-        <%= gravatar_for(recipe.chef, size: 120) %>
-      </section>
-    </div>
-      <div class="col-md-8 well">
-        <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
-        <p><h4><%= truncate(recipe.description, length: 150) %></h4></p>
-      <p>
-        <span class="quiet">
+        <%= gravatar_for(recipe.chef, size: 180) %>
+        <p>
+        <span class="quiet colormatch">
           <small>
           Created by:
           <%= link_to recipe.chef.chefname, recipe_path(recipe)  %>
           <%= time_ago_in_words(recipe.created_at) %> ago
           </small>
         </span>
-      </p>
+        </p>
+      </section>
+    </div>
+      <div class="col-md-8 well">
+        <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
+        <p><h6><%= truncate(recipe.description, length: 150) %></h6></p>
     </div>
   </div>
 <% end %>

@@ -1,8 +1,5 @@
-
-<h1 class="listing"><%= @recipe.name %></h1>
-<hr />
-
-<div class= "well col-md-8 col-md-offset-2">
+<%= render 'shared/page_title', title: @recipe.name %>
+<div class= "well col-md-8 offset-md-2">
   <h4 class="description"><strong>Steps:</strong></h4>
 
   <%= simple_format(@recipe.description) %>
@@ -18,14 +15,15 @@
       </small>
     </div>
 </p>
-
 </div>
 
 <div class="colormatch">
-  <%= link_to '<<Back to recipes', recipes_path, class: "pull-left" %>
-
-
-  <%= link_to 'Next recipe>>', recipe_path(@recipe.id.next), class:"pull-right" %>
+  <% if @recipe.id != Recipe.last.id %>
+    <%= link_to '<<Back to recipes', recipes_path, class: "pull-left" %>
+    <%= link_to 'Next recipe>>', recipe_path(@recipe.id.next), class:"pull-right" %>
+    <% else %>
+    <%= link_to '<<Back to recipes', recipes_path, class: "pull-left" %>
+  <% end %>
 
 </div>
 

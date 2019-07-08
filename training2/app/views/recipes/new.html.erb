@@ -1,7 +1,7 @@
 <%= render 'shared/page_title', title: "create a new recipe"%>
 <% if @recipe.errors.any? %>
 <div class="row">
-  <div clas="col-md-8 col-md-offset-2">
+  <div clas="col-md-8 offset-md-2">
     <div class="alert alert-danger">
 
       <%= pluralize(@recipe.errors.count, "error" ) %>
@@ -36,11 +36,11 @@
       </div>
     </div>
     <div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
+    <div class="offset-md-2 col-md-10">
       <%= f.submit class: "btn btn-lg btn-dark" %>
     </div>
   <% end %>
-  <div class="col-md-4 col-md-offset-4 colormatch">
+  <div class="col-md-4 offset-md-4 colormatch">
     <%= link_to 'Go back to recipes list', recipes_path %>
   </div>
   </div>
