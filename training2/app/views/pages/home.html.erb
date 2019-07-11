@@ -3,23 +3,37 @@
   <h2>The best recipe sharing app!</h2>
   <p><%= link_to 'Sign up for free', signup_path, class: "btn btn-danger btn-lg" %></p>
 </div>
+<h2 align="center">Our last recipes!</h2>
 <div class="row">
-        <div class="col-lg-4">
-          <h2>Safari bug warning!</h2>
-           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-dark" href="#" role="button">View details »</a></p>
-        </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-dark" href="#" role="button">View details »</a></p>
-       </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-          <p><a class="btn btn-dark" href="#" role="button">View details »</a></p>
-        </div>
-      </div>
-      <div class="container">
-  </div>
+  <div class="col-sm well">
+      <h5><%= Recipe.last.name %></h5>
+      <%= truncate(Recipe.last.description, length: 45) %><br />
+      <i><%= link_to 'Read More', recipe_path(Recipe.last) %></i>
+      <span class="quiet colormatch float-right align-top">
+          <small>
+          Added <%= time_ago_in_words(Recipe.last.created_at) %> ago
+          </small>
+        </span>
+    </div>
+    <div class="col-sm well">
+      <h5><%= Recipe.second_to_last.name %></h5>
+      <%= truncate(Recipe.second_to_last.description, length: 45) %><br />
+      <i><%= link_to 'Read More', recipe_path(Recipe.second_to_last) %></i>
+      <span class="quiet colormatch pull-right">
+          <small>
+          Added <%= time_ago_in_words(Recipe.second_to_last.created_at) %> ago
+          </small>
+        </span>
+    </div>
+    <div class="col-sm well">
+      <h5><%= Recipe.third_to_last.name %></h5>
+      <%= truncate(Recipe.third_to_last.description, length: 45) %><br />
+      <i><%= link_to 'Read More', recipe_path(Recipe.third_to_last) %></i>
+      <span class="quiet colormatch pull-right">
+          <small>
+          Added <%= time_ago_in_words(Recipe.third_to_last.created_at) %> ago
+          </small>
+        </span>
+    </div>
 </div>
+<h4 class="colormatch center"><%= link_to 'See all recipes', recipes_path %></h4>

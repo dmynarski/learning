@@ -3,6 +3,9 @@ class ChefsController < ApplicationController
     @chef = Chef.new
   end
 
+  def index
+    @chefs = Chef.paginate(page: params[:page], per_page: 5)
+  end
   def create
     @chef = Chef.new(chef_params)
     if @chef.save
@@ -27,8 +30,15 @@ class ChefsController < ApplicationController
     end
   end
 
+
   def edit
     @chef = Chef.find(params[:id])
+  end
+  def destroy
+    @chef = Chef.find(params[:id])
+      @chef.destroy
+      flash[:success] = "Profile was deleted"
+      redirect_to root_path
   end
   private
   def chef_params

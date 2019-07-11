@@ -1,0 +1,16 @@
+<%= render '/shared/page_title', title: "Our Chefs"%>
+<div align="center">
+<%= will_paginate  %>
+</div>
+<% @chefs.each do |chef| %>
+  <div class="row">
+    <div class="col-md-4 well offset-md-4">
+      <div class="chef_info">
+        <%= gravatar_for(chef) %><br/>
+        <%= link_to chef.chefname, chef_path(chef) %><br/>
+        <small><%= pluralize(chef.recipes.count, "recipe") %></small>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= will_paginate  %>

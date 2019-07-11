@@ -3,6 +3,7 @@
   <div class="well col-md-8 offset-md-2">
   <div class="pull-left">
   <%= link_to 'Edit Profile', edit_chef_path(@chef), class: "btn btn-xs btn-warning" %>
+  <%= link_to 'Delete Profile', chefs_path, method: :destroy, data: { confirm: "Delete #{@chef.chefname}?" }, class: "btn btn-xs btn-danger" %>
   </div>
     <section class="chef_info center">
       <div class="col-md-8 offset-md-2">
