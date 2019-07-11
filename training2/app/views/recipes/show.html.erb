@@ -10,7 +10,7 @@
     <div class="pull-right">
       <small>
       <em>Created by:
-        <%= link_to @recipe.chef.chefname, recipes_path %>
+        <%= link_to @recipe.chef.chefname, chef_path(@recipe.chef) %>
         <%= time_ago_in_words(@recipe.created_at) %> ago
         </em>
       </small>

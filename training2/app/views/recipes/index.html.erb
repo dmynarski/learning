@@ -2,14 +2,14 @@
 
 <% @recipes.each do |recipe| %>
   <div class="row align-items-center">
-    <div class="col-md-2">
+    <div class="col-md-1 offset-md-1">
       <section class="chef_info center">
         <%= gravatar_for(recipe.chef, size: 180) %>
         <p>
         <span class="quiet colormatch">
           <small>
           Created by:
-          <%= link_to recipe.chef.chefname, recipe_path(recipe)  %>
+          <%= link_to recipe.chef.chefname, chef_path(recipe.chef)  %><br />
           <%= time_ago_in_words(recipe.created_at) %> ago
           </small>
         </span>

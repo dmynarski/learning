@@ -1,1 +1,26 @@
-<%= render 'shared/page_title', title: "Your Profile" %>
+<%= render 'shared/page_title', title: "#{@chef.chefname}'s Profile" %>
+<div class="row">
+  <div class="well col-md-8 offset-md-2">
+    <section class="chef_info center">
+      <div class="col-md-8 offset-md-2">
+      <%= gravatar_for(@chef)%>
+      <p>
+      Name: <%= @chef.chefname %><br />
+      E-mail: <%= @chef.email %><br />
+      Joined: <%= time_ago_in_words(@chef.created_at) %> ago
+      </p>
+       <div class="col-md-8 offset-md-2">
+       <%= @chef.chefname %>'s recipes:
+       <p>
+      <% @chef.recipes.each do |recipe| %>
+      <h5><%= recipe.name %></h5>
+      <%= truncate(recipe.description, length: 40) %>
+      <i><%= link_to 'Read more', recipe_path(recipe) %></i>
+      <hr />
+      <% end %>
+      </p>
+      </div>
+      </div>
+    </section>
+  </div>
+</div>
