@@ -1,6 +1,9 @@
 <%= render 'shared/page_title', title: "#{@chef.chefname}'s Profile" %>
 <div class="row">
   <div class="well col-md-8 offset-md-2">
+  <div class="pull-left">
+  <%= link_to 'Edit Profile', edit_chef_path(@chef), class: "btn btn-xs btn-warning" %>
+  </div>
     <section class="chef_info center">
       <div class="col-md-8 offset-md-2">
       <%= gravatar_for(@chef)%>
