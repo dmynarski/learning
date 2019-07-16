@@ -1,0 +1,19 @@
+<div class="center">
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+<h1>Your patient profile :</h1>
+Name : <%= @patient.name %><br>
+Surname : <%= @patient.surname %><br>
+Email : <%= @patient.email %><br>
+Pesel : <%= @patient.pesel %><br>
+<%= link_to 'Edit profile', edit_patient_path(@patient) %>
+
+<h1>Your appointments:</h1>
+<% @patient.appointments.each do |app| %>
+  <ol>
+  <li><%= app.date %> with doctor <%= app.doctor.name %> about <%= app.description %></li>
+
+  </ol>
+<% end %>
+</div>

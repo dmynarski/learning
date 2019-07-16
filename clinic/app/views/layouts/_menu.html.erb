@@ -1,0 +1,11 @@
+<ul>
+<li><%= link_to 'Home', root_path %></li>
+<% if logged_in? %>
+  <li><%= link_to 'My Appointments', root_path %></li>
+
+  <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+  <li><%= link_to 'Make an appointment', new_appointment_path%></li>
+  <li><%= link_to 'Edit profile', edit_patient_path(current_patient)%></li>
+  <% end %>
+
+</ul>

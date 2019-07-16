@@ -1,0 +1,13 @@
+<div class="center">
+<% if !logged_in? %>
+<h1><%= link_to 'Login', login_path %></h1>
+<% else %>
+Your appointments :
+<p>
+<% current_patient.appointments.each do |app| %>
+  <li>Date :<%= app.date %> Doctor <%= app.doctor %></li>
+  <%= link_to 'View details', appointment_path(app) %>
+</p>
+<% end %>
+<% end %>
+</div>

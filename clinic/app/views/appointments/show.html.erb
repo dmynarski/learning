@@ -1,0 +1,12 @@
+<% if @appointment.patient = current_patient %>
+  <div class="center">
+  <h1>Appointment details</h1>
+  Date: <%= @appointment.date %><br>
+  Doctor: <%= @appointment.doctor %><br>
+  Description: <%= @appointment.description %><br>
+  <%= link_to 'Cancel', appointment_path(@appointment), method: :delete, data: { confirm: "Are you sure to cancel this appointment?" } %>
+
+  </div>
+  <% else %>
+  <h1>You can only see yours appontments</h1>
+<% end %>

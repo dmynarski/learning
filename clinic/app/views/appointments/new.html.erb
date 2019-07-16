@@ -1,0 +1,14 @@
+<div class="center">
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+<%= form_for(@appointment, :html => { role: "form" })do |f| %>
+<p><%= f.label :doctor_id %></p>
+<%= f.select :doctor_id, Doctor.all.map { |d| [d.to_s, d.id]} %><p></p>
+<%= f.label :description %><p>
+<%= f.text_area :description, placeholder: "Description of appointment"%></p>
+<p><%= f.label :date %></p>
+<p><%= f.date_select :date %></p>
+<p><%= f.submit %></p>
+<% end %>
+</div>

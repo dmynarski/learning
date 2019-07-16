@@ -1,0 +1,29 @@
+<div class="center">
+<h1>Register form</h1>
+<%= form_for(@patient, :html => { role: "form"}) do |f| %>
+<%= f.label :name, "Name" %>
+<%= f.text_field :name, placeholder: "Enter your name"%>
+<p>
+<%= f.label :surname, "Surname" %>
+<%= f.text_field :surname, placeholder: "Enter your surname"%> </p>
+<p>
+<%= f.label :email, "Email" %>
+<%= f.email_field :email, placeholder: "Enter your email address"%> </p>
+</p>
+<p>
+<%= f.label :pesel, "Pesel number" %>
+<%= f.number_field :pesel, placeholder: "Enter your pesel number"%> </p>
+</p>
+<p>
+<%= f.label :password, "Password" %>
+<%= f.password_field :password, placeholder: "Type your password"%> </p>
+</p>
+<p>
+<%= f.label :password_confirmation, "Confirm assword" %>
+<%= f.password_field :password_confirmation, placeholder: "Type your password"%> </p>
+</p>
+<p>
+<%= f.submit "Register" %>
+</p>
+<% end %>
+</div>
