@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.0.rc1'
 # Use sqlite3 as the database for Active Record
  gem 'sqlite3', group: :development
  gem 'pg', '~> 1.1', '>= 1.1.4', group: :production
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 gem 'rails_12factor', group: :produ
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5'
